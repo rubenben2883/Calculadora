@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarContro = new System.Windows.Forms.Button();
             this.textBoxSoloNumeros1 = new ControlesPersonalizadosMySoft.TextBoxSoloNumeros();
+            this.lblTeclaPresionada = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtResultados
@@ -172,6 +173,7 @@
             this.btnMultiplica.TabIndex = 12;
             this.btnMultiplica.Text = "*";
             this.btnMultiplica.UseVisualStyleBackColor = true;
+            this.btnMultiplica.Click += new System.EventHandler(this.btnMultiplica_Click);
             // 
             // btnMenos
             // 
@@ -182,6 +184,7 @@
             this.btnMenos.TabIndex = 11;
             this.btnMenos.Text = "-";
             this.btnMenos.UseVisualStyleBackColor = true;
+            this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
             // 
             // btnMas
             // 
@@ -192,6 +195,7 @@
             this.btnMas.TabIndex = 10;
             this.btnMas.Text = "+";
             this.btnMas.UseVisualStyleBackColor = true;
+            this.btnMas.Click += new System.EventHandler(this.btnMas_Click);
             // 
             // btnDidive
             // 
@@ -202,6 +206,7 @@
             this.btnDidive.TabIndex = 13;
             this.btnDidive.Text = "/";
             this.btnDidive.UseVisualStyleBackColor = true;
+            this.btnDidive.Click += new System.EventHandler(this.btnDidive_Click);
             // 
             // btnIgual
             // 
@@ -212,6 +217,7 @@
             this.btnIgual.TabIndex = 14;
             this.btnIgual.Text = "=";
             this.btnIgual.UseVisualStyleBackColor = true;
+            this.btnIgual.Click += new System.EventHandler(this.btnIgual_Click);
             // 
             // btnCero
             // 
@@ -255,6 +261,7 @@
             this.btnCE.TabIndex = 17;
             this.btnCE.Text = "CE";
             this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
             // lblOperacionActiva
             // 
@@ -313,13 +320,27 @@
             this.textBoxSoloNumeros1.Name = "textBoxSoloNumeros1";
             this.textBoxSoloNumeros1.Size = new System.Drawing.Size(318, 60);
             this.textBoxSoloNumeros1.TabIndex = 24;
+            this.textBoxSoloNumeros1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblTeclaPresionada
+            // 
+            this.lblTeclaPresionada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTeclaPresionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeclaPresionada.ForeColor = System.Drawing.Color.Tomato;
+            this.lblTeclaPresionada.Location = new System.Drawing.Point(12, 74);
+            this.lblTeclaPresionada.Name = "lblTeclaPresionada";
+            this.lblTeclaPresionada.Size = new System.Drawing.Size(80, 41);
+            this.lblTeclaPresionada.TabIndex = 25;
+            this.lblTeclaPresionada.Text = "Na";
+            this.lblTeclaPresionada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(911, 515);
+            this.ClientSize = new System.Drawing.Size(441, 515);
+            this.Controls.Add(this.lblTeclaPresionada);
             this.Controls.Add(this.textBoxSoloNumeros1);
             this.Controls.Add(this.btnAgregarContro);
             this.Controls.Add(this.label1);
@@ -346,8 +367,10 @@
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.txtResultados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "frmCalculadora";
             this.Text = "Mi Calculadora";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmCalculadora_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,6 +403,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarContro;
         private ControlesPersonalizadosMySoft.TextBoxSoloNumeros textBoxSoloNumeros1;
+        private System.Windows.Forms.Label lblTeclaPresionada;
         //private Calculadora.TextBoxSoloNumeros textBoxSoloNumeros1;
     }
 }
